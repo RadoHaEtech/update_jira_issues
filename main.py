@@ -8,7 +8,7 @@ from jira.resources import Issue
 USER = ""
 PWD = ""
 
-id_fini= "31"
+id_done= "31"
 # Some Authentication Methods
 jira = JIRA(
     basic_auth=(USER, PWD),  # a username/password tuple [Not recommended]
@@ -21,7 +21,7 @@ jira = JIRA(
 def update_to_done(issu_list=[]):
     for issue in issu_list:
         name = issue.key
-        jira.transition_issue(name, id_fini)
+        jira.transition_issue(name, id_done)
         print(f"MAJ: {name} OK")
         break
 
