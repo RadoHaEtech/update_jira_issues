@@ -1,9 +1,4 @@
-from collections import Counter
-from typing import cast
-
 from jira import JIRA
-from jira.client import ResultList
-from jira.resources import Issue
 
 USER = ""
 PWD = ""
