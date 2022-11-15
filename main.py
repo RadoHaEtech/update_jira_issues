@@ -23,9 +23,11 @@ def update_to_done(issu_list=[]):
         name = issue.key
         jira.transition_issue(name, id_done)
         print(f"MAJ: {name} OK")
-        break
 
 if __name__ == "__main__":
-    all = jira.search_issues('project = F2F AND status in ("En attente de validation", "In Progress", "To Do") AND assignee in (currentUser())')
+    project = 'F2F'
+    status_list = ("En attente de validation", "In Progress", "To Do")
+    query = f'project = {project} AND status in {status_list} AND assignee in (currentUser())'
+    all = jira.search_issues(query)
     print(f"Found {len(all)} tickets")
     update_to_done(all)
