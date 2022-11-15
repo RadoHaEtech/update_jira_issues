@@ -5,4 +5,4 @@ HOW TO USE:
 - fill PWD global variable with your password
 - Change id_fini with id of the state done if necessary
 - change query if needed
-- execute the secipt
+- execute the main.py file
